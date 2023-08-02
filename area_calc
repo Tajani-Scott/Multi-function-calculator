@@ -1,0 +1,42 @@
+import math
+
+shape = str(input("Enter your shape here: "))
+
+def shape_calc(shape):
+    if shape == "triangle":
+        tri_base = float(input("Enter the base length here: "))
+        tri_height = float(input("Enter the height length here: "))
+        triangle = 0.5 * tri_base * tri_height
+        print("The area of the triangle is", triangle)
+
+    elif shape == "rectangle":
+        rect_length = float(input("Enter the length here: "))
+        rect_width = float(input("Enter the width here: "))
+        rectangle = rect_length * rect_width
+        print("The area of the rectangle is", rectangle)
+
+    elif shape == "circle":
+        circle_radius = float(input("Enter the circle's radius here: "))
+        circle = math.pi * circle_radius ** 2
+        print("The area of the circle is", circle)
+
+    elif shape == "sphere":
+        sphere_radius = float(input("Enter the sphere's radius here: "))
+        sphere = 4 * math.pi * sphere_radius ** 2
+        print("The area of the sphere is", sphere)
+
+    elif shape == "ellipse":
+        axis_a = float(input("Enter the minor axis length here: "))
+        axis_b = float(input("Enter the major axis length here: "))
+        ellipse = 0.5 * axis_a * axis_b
+        print("The area of the ellipse is", ellipse)
+
+    elif shape == "square":
+        square_length = float(input("Enter the side length here: "))
+        square = square_length**2
+        print("The area of the square is", square)
+        
+    else:
+        print("Shape not recognized")
+
+shape_calc(shape)
