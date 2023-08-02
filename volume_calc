@@ -1,0 +1,97 @@
+import math
+
+print("You many enter any of the following shapes:",  "\n Cubes, Cuboids, Rectangular Prisms, Spheres, Cylinders, Cones, Pyramids, Triangular Prisms, Ellipsoids, Elliptical Cylinders, Torus(Donuts), Frustums and Parallelepiped Structures\n", sep= " ", end="\n")
+shape = str(input("Enter your shape here: ")).lower()
+
+def shape_calc(shape):
+    if shape == "cube":
+        cube_side_len = float(input("Enter the length of a side here: "))
+        cube = cube_side_len**3
+        print("The volume of the cube is ", cube)
+
+    elif shape == "cuboid":
+        cubd_len = float(input("Enter the length here: "))
+        cubd_wid = float(input("Enter the width here: "))
+        cubd_hgt = float(input("Enter the height here: "))
+        cuboid = cubd_hgt * cubd_wid * cubd_len
+        print("The volume of the cuboid is ", cuboid)
+
+    elif shape == "rectangular prism":
+        rectp_len = float(input("Enter the length here: "))
+        rectp_wid = float(input("Enter the width here: "))
+        rectp_hgt = float(input("Enter the height here: "))
+        rectangular_prism = rectp_hgt * rectp_wid * rectp_len
+        print("The volume of the rectangular prism is ", rectangular_prism)
+
+    elif shape == "sphere":
+        sph_rad = float(input("Enter the radius here: "))
+        sph_vol = (4/3)*math.pi*sph_rad**3
+        print("The volume of the sphere is ", sph_vol)
+
+    elif shape == "cylinder":
+        cylndr_rad = float(input("Enter the radius here: "))
+        cylndr_hgt = float(input("Enter the height here: "))
+        cylinder_vol = cylndr_hgt*math.pi*cylndr_rad**2
+        print("The volume of the cylinder is ", cylinder_vol)
+
+    elif shape == "cone":
+        cone_hgt = float(input("Enter the height here: "))
+        cone_rad = float(input("Enter the radius here: "))
+        cone_vol = (1/3)*math.pi*cone_hgt*cone_rad**2
+        print("The volume of the cone is ", cone_vol)
+
+    elif shape == "pyramid":
+        pyrmd_len = float(input("Enter the length of the base here: "))
+        pyrmd_width = float(input("Enter the width of the base here: "))
+        pyrmd_base_area = pyrmd_width * pyrmd_len
+        pyrmd_hgt = float(input("Enter the height here: "))
+        pyramid_vol = (1/3)*pyrmd_base_area*pyrmd_hgt
+        print("The volume of the pyramid is ", pyramid_vol)
+
+    elif shape == "triangular prism":
+        tri_base_len = float(input("Enter the base length here: "))
+        tri_base_width = float(input("Enter the base width here: "))
+        tri_base_area = tri_base_width * tri_base_len
+        tri_hgt = float(input("Enter the height here: "))
+        tri_prsm_vol = 0.5*tri_base_area*tri_hgt
+        print("The volume of the triangular prism is ", tri_prsm_vol )
+
+    elif shape == "torus":
+        trs_maj_rad = float(input("Enter the major radius here: "))
+        trs_min_rad = float(input("Enter the minor radius here: "))
+        torus_vol = 2*(math.pi)**2*trs_maj_rad*trs_min_rad**2
+        print("The volume of the torus is ", torus_vol)
+
+    elif shape == "ellipsoid":
+        semi_prncpl_a = float(input("Enter the first semi-principal axis length here: "))
+        semi_prncpl_b = float(input("Enter the second semi-principal axis length here: "))
+        semi_prncpl_c = float(input("Enter the third semi-principal axis length here: "))
+        ellipsoid_vol = (4/3)*math.pi*semi_prncpl_c*semi_prncpl_b*semi_prncpl_a
+        print("The volume of the ellipsoid is ",  ellipsoid_vol)
+
+    elif shape == "elliptical cylinder":
+        elip_cylndr_axis_a = float(input("Enter the length of aixs a here: "))
+        elip_cylndr_axis_b = float(input("Enter the length of axis b here: "))
+        elip_cylndr_hgt = float(input("Enter the height here: "))
+        elip_cylndr_vol = math.pi * elip_cylndr_hgt * elip_cylndr_axis_b * elip_cylndr_axis_a
+        print("The volume of the elliptical cylinder is ", elip_cylndr_vol)
+
+    elif shape == "cone frustum":
+        frustum_hgt = float(input("Enter the height here: "))
+        frustum_mg_rad = float(input("Enter the larger base radius here: "))
+        frustum_min_rad = float(input("Enter the smaller base radius here: "))
+        frustum_vol = (1/3)*math.pi*frustum_hgt*(frustum_mg_rad**2 + frustum_min_rad**2 +frustum_min_rad*frustum_mg_rad)
+        print("The volume of the cone\'s frustum is ", frustum_vol)
+
+    elif shape == "parallelepiped":
+        prleppd_base_len = float(input("Enter the base length here: "))
+        prleppd_base_width = float(input("Enter the base width here: "))
+        prleppd_base_area = prleppd_base_width * prleppd_base_len
+        prleppd_hgt = float(input("Enter the height here: "))
+        parallelepiped_vol = prleppd_base_area*prleppd_hgt
+        print("The volume the parallelepiped structure is ", parallelepiped_vol)
+
+    else:
+        print("That shape is either not in our system or does not exist.")
+
+shape_calc(shape)
